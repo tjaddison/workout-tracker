@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>YMCA Workout Tracker</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>YMCA Workout</h1>
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-menu" id="navMenu">
+            <button class="nav-item active" data-view="today">Today</button>
+            <button class="nav-item" data-view="schedule">Schedule</button>
+            <button class="nav-item" data-view="history">History</button>
+            <button class="nav-item" data-view="progress">Progress</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Today View -->
+            <section class="view active" id="todayView">
+                <div class="workout-header">
+                    <h2 class="workout-title" id="workoutTitle">Loading...</h2>
+                    <p class="workout-date" id="workoutDate"></p>
+                </div>
+
+                <div class="workout-phases" id="workoutPhases">
+                    <!-- Workout phases will be dynamically inserted here -->
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="startWorkoutBtn">Start Workout</button>
+                </div>
+            </section>
+
+            <!-- Schedule View -->
+            <section class="view" id="scheduleView">
+                <h2>Weekly Schedule</h2>
+                <div class="schedule-grid" id="scheduleGrid">
+                    <!-- Schedule will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <!-- History View -->
+            <section class="view" id="historyView">
+                <h2>Workout History</h2>
+                <div class="history-list" id="historyList">
+                    <!-- History will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <!-- Progress View -->
+            <section class="view" id="progressView">
+                <h2>Your Progress</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Workouts</h3>
+                        <p class="stat-value" id="totalWorkouts">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>This Week</h3>
+                        <p class="stat-value" id="weekWorkouts">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Streak</h3>
+                        <p class="stat-value" id="workoutStreak">0 days</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Time</h3>
+                        <p class="stat-value" id="totalTime">0 hrs</p>
+                    </div>
+                </div>
+                <div class="progress-chart" id="progressChart">
+                    <!-- Chart will be rendered here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Workout Modal -->
+        <div class="modal" id="workoutModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="exerciseName">Exercise</h3>
+                    <button class="close-btn" id="closeModalBtn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="timer-display" id="timerDisplay">00:00</div>
+                    <div class="exercise-info" id="exerciseInfo">
+                        <!-- Exercise details will be shown here -->
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="btn btn-secondary" id="prevExerciseBtn">Previous</button>
+                        <button class="btn btn-primary" id="timerToggleBtn">Start</button>
+                        <button class="btn btn-secondary" id="nextExerciseBtn">Next</button>
+                    </div>
+                    <div class="workout-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="workoutProgress"></div>
+                        </div>
+                        <p class="progress-text" id="progressText">0 of 0 completed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timer Modal -->
+        <div class="modal" id="timerModal">
+            <div class="modal-content timer-modal">
+                <h3>Rest Timer</h3>
+                <div class="timer-display large" id="restTimerDisplay">00:45</div>
+                <button class="btn btn-primary" id="skipRestBtn">Skip Rest</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

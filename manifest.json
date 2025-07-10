@@ -1,0 +1,39 @@
+{
+  "name": "YMCA Workout Tracker",
+  "short_name": "Workout",
+  "description": "Track your YMCA workout routine with this easy-to-use mobile app",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["fitness", "health", "sports"],
+  "shortcuts": [
+    {
+      "name": "Start Today's Workout",
+      "short_name": "Start",
+      "description": "Begin your scheduled workout",
+      "url": "/?action=start"
+    },
+    {
+      "name": "View Progress",
+      "short_name": "Progress",
+      "description": "Check your workout stats",
+      "url": "/?view=progress"
+    }
+  ]
+}
