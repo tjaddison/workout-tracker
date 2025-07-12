@@ -22,9 +22,24 @@
             </button>
         </header>
 
+        <!-- Side Menu -->
+        <div class="side-menu" id="sideMenu">
+            <div class="menu-content">
+                <h3>Menu</h3>
+                <button class="menu-close" id="menuClose">&times;</button>
+                <div class="menu-items">
+                    <button class="menu-item" data-action="settings">Settings</button>
+                    <button class="menu-item" data-action="export">Export Data</button>
+                    <button class="menu-item" data-action="import">Import Data</button>
+                    <button class="menu-item" data-action="reset">Reset All Data</button>
+                </div>
+            </div>
+            <div class="menu-overlay" id="menuOverlay"></div>
+        </div>
+
         <!-- Navigation -->
         <nav class="nav-menu" id="navMenu">
-            <button class="nav-item active" data-view="today">Today</button>
+            <button class="nav-item active" data-view="workouts">Workouts</button>
             <button class="nav-item" data-view="schedule">Schedule</button>
             <button class="nav-item" data-view="history">History</button>
             <button class="nav-item" data-view="progress">Progress</button>
@@ -32,18 +47,25 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Today View -->
-            <section class="view active" id="todayView">
-                <div class="workout-header">
-                    <h2 class="workout-title" id="workoutTitle">Loading...</h2>
-                    <p class="workout-date" id="workoutDate"></p>
+            <!-- Workouts View -->
+            <section class="view active" id="workoutsView">
+                <div class="workout-selector">
+                    <h2>Choose Your Workout</h2>
+                    <select class="workout-select" id="workoutSelect">
+                        <option value="">Select a workout...</option>
+                        <option value="monday">Upper Body + Cardio (Monday)</option>
+                        <option value="tuesday">Lower Body + Cardio (Tuesday)</option>
+                        <option value="wednesday">Cardio Focus (Wednesday)</option>
+                        <option value="thursday">Full Body Circuit + Cardio (Thursday)</option>
+                        <option value="friday">Upper Body + Cardio (Friday)</option>
+                    </select>
                 </div>
 
-                <div class="workout-phases" id="workoutPhases">
-                    <!-- Workout phases will be dynamically inserted here -->
+                <div class="workout-content" id="workoutContent">
+                    <p class="select-prompt">Select a workout to begin</p>
                 </div>
 
-                <div class="action-buttons">
+                <div class="action-buttons" id="workoutActions" style="display: none;">
                     <button class="btn btn-primary" id="startWorkoutBtn">Start Workout</button>
                 </div>
             </section>
@@ -91,23 +113,27 @@
             </section>
         </main>
 
-        <!-- Workout Modal -->
-        <div class="modal" id="workoutModal">
+        <!-- Exercise Modal -->
+        <div class="modal" id="exerciseModal">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 id="exerciseName">Exercise</h3>
                     <button class="close-btn" id="closeModalBtn">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div class="timer-display" id="timerDisplay">00:00</div>
                     <div class="exercise-info" id="exerciseInfo">
                         <!-- Exercise details will be shown here -->
                     </div>
+                    
+                    <div class="sets-tracking" id="setsTracking">
+                        <!-- Sets will be dynamically added here -->
+                    </div>
+
                     <div class="exercise-controls">
                         <button class="btn btn-secondary" id="prevExerciseBtn">Previous</button>
-                        <button class="btn btn-primary" id="timerToggleBtn">Start</button>
-                        <button class="btn btn-secondary" id="nextExerciseBtn">Next</button>
+                        <button class="btn btn-primary" id="nextExerciseBtn">Next Exercise</button>
                     </div>
+                    
                     <div class="workout-progress">
                         <div class="progress-bar">
                             <div class="progress-fill" id="workoutProgress"></div>
@@ -115,15 +141,6 @@
                         <p class="progress-text" id="progressText">0 of 0 completed</p>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Timer Modal -->
-        <div class="modal" id="timerModal">
-            <div class="modal-content timer-modal">
-                <h3>Rest Timer</h3>
-                <div class="timer-display large" id="restTimerDisplay">00:45</div>
-                <button class="btn btn-primary" id="skipRestBtn">Skip Rest</button>
             </div>
         </div>
     </div>

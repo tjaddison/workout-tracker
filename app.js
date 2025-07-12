@@ -2,18 +2,15 @@
 const workoutSchedule = {
     monday: {
         name: "Upper Body + Cardio",
-        duration: "30-35 mins",
         phases: [
             {
                 name: "Warm-up",
-                duration: 3,
                 exercises: [
                     { name: "Treadmill/Bike", duration: 3, type: "cardio" }
                 ]
             },
             {
                 name: "Upper Body Strength",
-                duration: 18,
                 exercises: [
                     { name: "Chest Press Machine", sets: 3, reps: "15-20", rest: 45 },
                     { name: "Lat Pulldown", sets: 3, reps: "15-20", rest: 45 },
@@ -25,7 +22,6 @@ const workoutSchedule = {
             },
             {
                 name: "Cardio Finish",
-                duration: 12,
                 exercises: [
                     { name: "Moderate Cardio", duration: 10, type: "cardio" },
                     { name: "Cool-down Walk", duration: 2, type: "cardio" }
@@ -33,7 +29,6 @@ const workoutSchedule = {
             },
             {
                 name: "Sauna",
-                duration: 10,
                 exercises: [
                     { name: "Sauna Session", duration: 10, type: "recovery" }
                 ]
@@ -42,18 +37,15 @@ const workoutSchedule = {
     },
     tuesday: {
         name: "Lower Body + Cardio",
-        duration: "30-35 mins",
         phases: [
             {
                 name: "Warm-up",
-                duration: 3,
                 exercises: [
                     { name: "Walking/Cycling", duration: 3, type: "cardio" }
                 ]
             },
             {
                 name: "Lower Body Strength",
-                duration: 18,
                 exercises: [
                     { name: "Leg Press Machine", sets: 3, reps: "15-20", rest: 45 },
                     { name: "Leg Curl Machine", sets: 3, reps: "15-20", rest: 45 },
@@ -65,7 +57,6 @@ const workoutSchedule = {
             },
             {
                 name: "Cardio Finish",
-                duration: 12,
                 exercises: [
                     { name: "Moderate Cardio", duration: 10, type: "cardio" },
                     { name: "Cool-down", duration: 2, type: "cardio" }
@@ -73,7 +64,6 @@ const workoutSchedule = {
             },
             {
                 name: "Sauna",
-                duration: 10,
                 exercises: [
                     { name: "Sauna Session", duration: 10, type: "recovery" }
                 ]
@@ -82,11 +72,9 @@ const workoutSchedule = {
     },
     wednesday: {
         name: "Cardio Focus",
-        duration: "30-35 mins",
         phases: [
             {
                 name: "Extended Cardio",
-                duration: 30,
                 exercises: [
                     { name: "Warm-up", duration: 5, type: "cardio" },
                     { name: "Cardio Intervals", duration: 20, type: "cardio", description: "2 min moderate, 1 min high intensity" },
@@ -95,7 +83,6 @@ const workoutSchedule = {
             },
             {
                 name: "Sauna",
-                duration: 10,
                 exercises: [
                     { name: "Sauna Session", duration: 10, type: "recovery" }
                 ]
@@ -104,31 +91,27 @@ const workoutSchedule = {
     },
     thursday: {
         name: "Full Body Circuit + Cardio",
-        duration: "30-35 mins",
         phases: [
             {
                 name: "Warm-up",
-                duration: 3,
                 exercises: [
                     { name: "Light Movement", duration: 3, type: "cardio" }
                 ]
             },
             {
                 name: "Barbell Complex",
-                duration: 20,
                 exercises: [
-                    { name: "Military Press", reps: 6, complex: true },
-                    { name: "Front Squats", reps: 7, complex: true },
-                    { name: "Bent Over Rows", reps: 8, complex: true },
-                    { name: "Romanian Deadlifts", reps: 9, complex: true },
-                    { name: "Back Squats", reps: 10, complex: true }
+                    { name: "Military Press", reps: 6, complex: true, sets: 1 },
+                    { name: "Front Squats", reps: 7, complex: true, sets: 1 },
+                    { name: "Bent Over Rows", reps: 8, complex: true, sets: 1 },
+                    { name: "Romanian Deadlifts", reps: 9, complex: true, sets: 1 },
+                    { name: "Back Squats", reps: 10, complex: true, sets: 1 }
                 ],
                 rounds: "5-10",
                 weight: "65-75 lbs"
             },
             {
                 name: "Cardio Finish",
-                duration: 10,
                 exercises: [
                     { name: "Moderate Cardio", duration: 8, type: "cardio" },
                     { name: "Cool-down", duration: 2, type: "cardio" }
@@ -136,7 +119,6 @@ const workoutSchedule = {
             },
             {
                 name: "Sauna",
-                duration: 10,
                 exercises: [
                     { name: "Sauna Session", duration: 10, type: "recovery" }
                 ]
@@ -145,18 +127,15 @@ const workoutSchedule = {
     },
     friday: {
         name: "Upper Body + Cardio",
-        duration: "30-35 mins",
         phases: [
             {
                 name: "Warm-up",
-                duration: 3,
                 exercises: [
                     { name: "Easy Movement", duration: 3, type: "cardio" }
                 ]
             },
             {
                 name: "Upper Body Strength",
-                duration: 18,
                 exercises: [
                     { name: "Incline Chest Press", sets: 3, reps: "15-20", rest: 45 },
                     { name: "Wide-Grip Pulldown", sets: 3, reps: "15-20", rest: 45 },
@@ -168,7 +147,6 @@ const workoutSchedule = {
             },
             {
                 name: "Cardio Finish",
-                duration: 12,
                 exercises: [
                     { name: "Moderate Cardio", duration: 10, type: "cardio" },
                     { name: "Cool-down", duration: 2, type: "cardio" }
@@ -176,7 +154,6 @@ const workoutSchedule = {
             },
             {
                 name: "Sauna",
-                duration: 10,
                 exercises: [
                     { name: "Sauna Session", duration: 10, type: "recovery" }
                 ]
@@ -188,49 +165,23 @@ const workoutSchedule = {
 // App State
 class WorkoutTracker {
     constructor() {
-        this.currentView = 'today';
-        this.currentWorkout = null;
+        this.currentView = 'workouts';
+        this.selectedWorkout = null;
         this.workoutInProgress = false;
         this.currentExerciseIndex = 0;
         this.currentPhaseIndex = 0;
-        this.timer = null;
-        this.timerSeconds = 0;
-        this.restTimer = null;
-        this.workoutStartTime = null;
+        this.currentSession = null;
         
-        this.initializeApp();
         this.loadData();
         this.bindEvents();
         this.updateViews();
     }
 
-    initializeApp() {
-        // Set today's date
-        const today = new Date();
-        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('workoutDate').textContent = today.toLocaleDateString('en-US', dateOptions);
-        
-        // Get today's workout
-        const dayName = today.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
-        this.currentWorkout = workoutSchedule[dayName] || null;
-        
-        if (this.currentWorkout) {
-            document.getElementById('workoutTitle').textContent = this.currentWorkout.name;
-            this.renderTodayWorkout();
-        } else {
-            document.getElementById('workoutTitle').textContent = 'Rest Day';
-            document.getElementById('workoutPhases').innerHTML = '<p class="rest-day-message">Take a rest day or do some light walking!</p>';
-            document.getElementById('startWorkoutBtn').style.display = 'none';
-        }
-    }
-
     loadData() {
-        // Load workout history from localStorage
         this.workoutHistory = JSON.parse(localStorage.getItem('workoutHistory')) || [];
         this.userSettings = JSON.parse(localStorage.getItem('userSettings')) || {
-            startWeight: 65,
-            currentWeight: 65,
-            weeklyIncrement: 10
+            defaultWeight: 45,
+            weightUnit: 'lbs'
         };
     }
 
@@ -247,18 +198,39 @@ class WorkoutTracker {
             });
         });
 
+        // Menu functionality
+        document.getElementById('menuBtn').addEventListener('click', () => {
+            this.openMenu();
+        });
+
+        document.getElementById('menuClose').addEventListener('click', () => {
+            this.closeMenu();
+        });
+
+        document.getElementById('menuOverlay').addEventListener('click', () => {
+            this.closeMenu();
+        });
+
+        // Menu actions
+        document.querySelectorAll('.menu-item').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                this.handleMenuAction(e.target.dataset.action);
+            });
+        });
+
+        // Workout selection
+        document.getElementById('workoutSelect').addEventListener('change', (e) => {
+            this.selectWorkout(e.target.value);
+        });
+
         // Start workout button
         document.getElementById('startWorkoutBtn').addEventListener('click', () => {
             this.startWorkout();
         });
 
-        // Modal controls
+        // Exercise modal controls
         document.getElementById('closeModalBtn').addEventListener('click', () => {
-            this.closeWorkoutModal();
-        });
-
-        document.getElementById('timerToggleBtn').addEventListener('click', () => {
-            this.toggleTimer();
+            this.closeExerciseModal();
         });
 
         document.getElementById('nextExerciseBtn').addEventListener('click', () => {
@@ -268,15 +240,89 @@ class WorkoutTracker {
         document.getElementById('prevExerciseBtn').addEventListener('click', () => {
             this.previousExercise();
         });
+    }
 
-        document.getElementById('skipRestBtn').addEventListener('click', () => {
-            this.skipRest();
-        });
+    openMenu() {
+        document.getElementById('sideMenu').classList.add('active');
+    }
 
-        // Menu button (for future menu implementation)
-        document.getElementById('menuBtn').addEventListener('click', () => {
-            // Future menu implementation
-        });
+    closeMenu() {
+        document.getElementById('sideMenu').classList.remove('active');
+    }
+
+    handleMenuAction(action) {
+        this.closeMenu();
+        
+        switch (action) {
+            case 'settings':
+                alert('Settings coming soon!');
+                break;
+            case 'export':
+                this.exportData();
+                break;
+            case 'import':
+                this.importData();
+                break;
+            case 'reset':
+                if (confirm('Are you sure you want to reset all data? This cannot be undone.')) {
+                    this.resetData();
+                }
+                break;
+        }
+    }
+
+    exportData() {
+        const data = {
+            workoutHistory: this.workoutHistory,
+            userSettings: this.userSettings,
+            exportDate: new Date().toISOString()
+        };
+        
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `workout-data-${new Date().toISOString().split('T')[0]}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    importData() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.json';
+        input.onchange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const data = JSON.parse(e.target.result);
+                        if (data.workoutHistory && data.userSettings) {
+                            this.workoutHistory = data.workoutHistory;
+                            this.userSettings = data.userSettings;
+                            this.saveData();
+                            alert('Data imported successfully!');
+                            this.updateViews();
+                        } else {
+                            alert('Invalid file format');
+                        }
+                    } catch (error) {
+                        alert('Error reading file');
+                    }
+                };
+                reader.readAsText(file);
+            }
+        };
+        input.click();
+    }
+
+    resetData() {
+        this.workoutHistory = [];
+        this.userSettings = { defaultWeight: 45, weightUnit: 'lbs' };
+        this.saveData();
+        this.updateViews();
+        alert('All data has been reset');
     }
 
     switchView(viewName) {
@@ -310,17 +356,28 @@ class WorkoutTracker {
         }
     }
 
-    renderTodayWorkout() {
-        const phasesContainer = document.getElementById('workoutPhases');
-        phasesContainer.innerHTML = '';
+    selectWorkout(workoutKey) {
+        if (!workoutKey) {
+            document.getElementById('workoutContent').innerHTML = '<p class="select-prompt">Select a workout to begin</p>';
+            document.getElementById('workoutActions').style.display = 'none';
+            return;
+        }
 
-        this.currentWorkout.phases.forEach((phase, phaseIndex) => {
+        this.selectedWorkout = workoutSchedule[workoutKey];
+        this.renderSelectedWorkout();
+        document.getElementById('workoutActions').style.display = 'block';
+    }
+
+    renderSelectedWorkout() {
+        const container = document.getElementById('workoutContent');
+        container.innerHTML = '';
+
+        this.selectedWorkout.phases.forEach((phase, phaseIndex) => {
             const phaseCard = document.createElement('div');
             phaseCard.className = 'phase-card';
             phaseCard.innerHTML = `
                 <div class="phase-header">
                     <h3 class="phase-title">${phase.name}</h3>
-                    <span class="phase-duration">${phase.duration} mins</span>
                 </div>
                 <div class="exercise-list">
                     ${phase.exercises.map((exercise, exerciseIndex) => `
@@ -336,8 +393,230 @@ class WorkoutTracker {
                     ${phase.rounds ? `<p class="phase-note">Complete ${phase.rounds} rounds • Starting weight: ${phase.weight}</p>` : ''}
                 </div>
             `;
-            phasesContainer.appendChild(phaseCard);
+            container.appendChild(phaseCard);
         });
+    }
+
+    startWorkout() {
+        if (!this.selectedWorkout) return;
+
+        this.workoutInProgress = true;
+        this.currentPhaseIndex = 0;
+        this.currentExerciseIndex = 0;
+        
+        // Initialize workout session
+        this.currentSession = {
+            date: new Date().toISOString(),
+            name: this.selectedWorkout.name,
+            exercises: [],
+            totalExercises: this.selectedWorkout.phases.reduce((sum, phase) => sum + phase.exercises.length, 0),
+            completedExercises: 0
+        };
+
+        this.showExercise();
+    }
+
+    showExercise() {
+        const modal = document.getElementById('exerciseModal');
+        const phase = this.selectedWorkout.phases[this.currentPhaseIndex];
+        const exercise = phase.exercises[this.currentExerciseIndex];
+
+        document.getElementById('exerciseName').textContent = exercise.name;
+        
+        // Build exercise info
+        let exerciseInfo = '';
+        if (exercise.sets && exercise.reps) {
+            exerciseInfo = `
+                <p><strong>Target:</strong> ${exercise.sets} sets × ${exercise.reps} reps</p>
+                ${exercise.rest ? `<p><strong>Rest:</strong> ${exercise.rest} seconds between sets</p>` : ''}
+            `;
+        } else if (exercise.duration) {
+            exerciseInfo = `<p><strong>Duration:</strong> ${exercise.duration} minutes</p>`;
+        } else if (exercise.reps) {
+            exerciseInfo = `<p><strong>Reps:</strong> ${exercise.reps}</p>`;
+        }
+        
+        if (exercise.description) {
+            exerciseInfo += `<p><strong>Note:</strong> ${exercise.description}</p>`;
+        }
+
+        document.getElementById('exerciseInfo').innerHTML = exerciseInfo;
+        
+        // Create sets tracking for strength exercises
+        this.renderSetsTracking(exercise);
+        
+        // Update progress
+        const totalExercises = this.currentSession.totalExercises;
+        const currentExerciseNumber = this.getCurrentExerciseNumber();
+        const progressPercent = (currentExerciseNumber / totalExercises) * 100;
+        
+        document.getElementById('workoutProgress').style.width = `${progressPercent}%`;
+        document.getElementById('progressText').textContent = `${currentExerciseNumber} of ${totalExercises}`;
+
+        modal.classList.add('active');
+    }
+
+    renderSetsTracking(exercise) {
+        const container = document.getElementById('setsTracking');
+        
+        if (!exercise.sets || exercise.type === 'cardio' || exercise.type === 'recovery') {
+            container.innerHTML = '';
+            return;
+        }
+
+        const exerciseKey = `${this.currentPhaseIndex}-${this.currentExerciseIndex}`;
+        const savedSets = this.currentSession.exercises.find(e => e.key === exerciseKey)?.sets || [];
+
+        container.innerHTML = '';
+        
+        for (let i = 0; i < exercise.sets; i++) {
+            const savedSet = savedSets[i] || { weight: this.userSettings.defaultWeight, completed: false };
+            
+            const setDiv = document.createElement('div');
+            setDiv.className = `set-item ${savedSet.completed ? 'completed' : ''}`;
+            setDiv.innerHTML = `
+                <span class="set-number">Set ${i + 1}</span>
+                <input type="number" 
+                       class="weight-input" 
+                       value="${savedSet.weight}" 
+                       placeholder="Weight"
+                       data-set="${i}">
+                <span class="weight-unit">${this.userSettings.weightUnit}</span>
+                <span class="reps-display">${exercise.reps}</span>
+                <button class="set-complete-btn ${savedSet.completed ? 'completed' : ''}" 
+                        data-set="${i}">
+                    ${savedSet.completed ? '✓' : 'Complete'}
+                </button>
+            `;
+            container.appendChild(setDiv);
+        }
+
+        // Bind events for weight inputs and complete buttons
+        container.querySelectorAll('.weight-input').forEach(input => {
+            input.addEventListener('change', (e) => {
+                this.updateSetWeight(exerciseKey, parseInt(e.target.dataset.set), parseFloat(e.target.value));
+            });
+        });
+
+        container.querySelectorAll('.set-complete-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                this.toggleSetComplete(exerciseKey, parseInt(e.target.dataset.set));
+            });
+        });
+    }
+
+    updateSetWeight(exerciseKey, setIndex, weight) {
+        let exerciseData = this.currentSession.exercises.find(e => e.key === exerciseKey);
+        
+        if (!exerciseData) {
+            const phase = this.selectedWorkout.phases[this.currentPhaseIndex];
+            const exercise = phase.exercises[this.currentExerciseIndex];
+            exerciseData = {
+                key: exerciseKey,
+                name: exercise.name,
+                sets: []
+            };
+            this.currentSession.exercises.push(exerciseData);
+        }
+
+        if (!exerciseData.sets[setIndex]) {
+            exerciseData.sets[setIndex] = { weight: weight, completed: false };
+        } else {
+            exerciseData.sets[setIndex].weight = weight;
+        }
+    }
+
+    toggleSetComplete(exerciseKey, setIndex) {
+        let exerciseData = this.currentSession.exercises.find(e => e.key === exerciseKey);
+        
+        if (!exerciseData) {
+            const phase = this.selectedWorkout.phases[this.currentPhaseIndex];
+            const exercise = phase.exercises[this.currentExerciseIndex];
+            exerciseData = {
+                key: exerciseKey,
+                name: exercise.name,
+                sets: []
+            };
+            this.currentSession.exercises.push(exerciseData);
+        }
+
+        if (!exerciseData.sets[setIndex]) {
+            exerciseData.sets[setIndex] = { weight: this.userSettings.defaultWeight, completed: false };
+        }
+
+        exerciseData.sets[setIndex].completed = !exerciseData.sets[setIndex].completed;
+        
+        // Re-render the sets tracking to update UI
+        const phase = this.selectedWorkout.phases[this.currentPhaseIndex];
+        const exercise = phase.exercises[this.currentExerciseIndex];
+        this.renderSetsTracking(exercise);
+    }
+
+    getCurrentExerciseNumber() {
+        let count = 0;
+        for (let i = 0; i < this.currentPhaseIndex; i++) {
+            count += this.selectedWorkout.phases[i].exercises.length;
+        }
+        return count + this.currentExerciseIndex + 1;
+    }
+
+    nextExercise() {
+        this.completeCurrentExercise();
+        
+        const phase = this.selectedWorkout.phases[this.currentPhaseIndex];
+        
+        if (this.currentExerciseIndex < phase.exercises.length - 1) {
+            this.currentExerciseIndex++;
+        } else if (this.currentPhaseIndex < this.selectedWorkout.phases.length - 1) {
+            this.currentPhaseIndex++;
+            this.currentExerciseIndex = 0;
+        } else {
+            // Workout complete
+            this.completeWorkout();
+            return;
+        }
+
+        this.showExercise();
+    }
+
+    previousExercise() {
+        if (this.currentExerciseIndex > 0) {
+            this.currentExerciseIndex--;
+        } else if (this.currentPhaseIndex > 0) {
+            this.currentPhaseIndex--;
+            this.currentExerciseIndex = this.selectedWorkout.phases[this.currentPhaseIndex].exercises.length - 1;
+        }
+        
+        this.showExercise();
+    }
+
+    completeCurrentExercise() {
+        this.currentSession.completedExercises++;
+    }
+
+    completeWorkout() {
+        // Save to history
+        this.workoutHistory.push(this.currentSession);
+        this.saveData();
+        
+        // Close modal
+        this.closeExerciseModal();
+        
+        // Show completion message
+        alert(`Great job! You completed your ${this.currentSession.name} workout!`);
+        
+        // Refresh views
+        this.updateViews();
+        
+        // Reset workout state
+        this.workoutInProgress = false;
+        this.currentSession = null;
+        document.getElementById('workoutSelect').value = '';
+        this.selectWorkout('');
+    }
+
+    closeExerciseModal() {
+        document.getElementById('exerciseModal').classList.remove('active');
     }
 
     renderSchedule() {
@@ -354,7 +633,6 @@ class WorkoutTracker {
                 <div class="schedule-day ${isToday ? 'today' : ''} ${isCompleted ? 'completed' : ''}">
                     <h3 class="day-name">${day.charAt(0).toUpperCase() + day.slice(1)}</h3>
                     <p class="day-workout">${workout ? workout.name : 'Rest Day'}</p>
-                    ${workout ? `<p class="day-duration">${workout.duration}</p>` : ''}
                 </div>
             `;
         }).join('');
@@ -379,8 +657,7 @@ class WorkoutTracker {
                 })}</div>
                 <div class="history-details">${workout.name}</div>
                 <div class="history-stats">
-                    <span>Duration: ${workout.duration} mins</span>
-                    <span>Completed: ${workout.completedExercises}/${workout.totalExercises}</span>
+                    <span>Completed: ${workout.completedExercises}/${workout.totalExercises} exercises</span>
                 </div>
             </div>
         `).join('');
@@ -390,235 +667,11 @@ class WorkoutTracker {
         const totalWorkouts = this.workoutHistory.length;
         const weekWorkouts = this.getWeekWorkouts();
         const streak = this.calculateStreak();
-        const totalTime = this.workoutHistory.reduce((sum, workout) => sum + workout.duration, 0);
 
         document.getElementById('totalWorkouts').textContent = totalWorkouts;
         document.getElementById('weekWorkouts').textContent = weekWorkouts;
         document.getElementById('workoutStreak').textContent = `${streak} days`;
-        document.getElementById('totalTime').textContent = `${Math.round(totalTime / 60)} hrs`;
-    }
-
-    startWorkout() {
-        if (!this.currentWorkout) return;
-
-        this.workoutInProgress = true;
-        this.currentPhaseIndex = 0;
-        this.currentExerciseIndex = 0;
-        this.workoutStartTime = new Date();
-        
-        // Initialize workout session
-        this.currentSession = {
-            date: new Date().toISOString(),
-            name: this.currentWorkout.name,
-            day: new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase(),
-            exercises: [],
-            totalExercises: this.currentWorkout.phases.reduce((sum, phase) => sum + phase.exercises.length, 0),
-            completedExercises: 0,
-            duration: 0
-        };
-
-        this.showExercise();
-    }
-
-    showExercise() {
-        const modal = document.getElementById('workoutModal');
-        const phase = this.currentWorkout.phases[this.currentPhaseIndex];
-        const exercise = phase.exercises[this.currentExerciseIndex];
-
-        document.getElementById('exerciseName').textContent = exercise.name;
-        
-        // Build exercise info
-        let exerciseInfo = '';
-        if (exercise.sets && exercise.reps) {
-            exerciseInfo = `
-                <p><strong>Sets:</strong> ${exercise.sets}</p>
-                <p><strong>Reps:</strong> ${exercise.reps}</p>
-                <p><strong>Rest:</strong> ${exercise.rest} seconds</p>
-            `;
-        } else if (exercise.duration) {
-            exerciseInfo = `<p><strong>Duration:</strong> ${exercise.duration} minutes</p>`;
-        } else if (exercise.reps) {
-            exerciseInfo = `<p><strong>Reps:</strong> ${exercise.reps}</p>`;
-        }
-        
-        if (exercise.description) {
-            exerciseInfo += `<p><strong>Note:</strong> ${exercise.description}</p>`;
-        }
-
-        document.getElementById('exerciseInfo').innerHTML = exerciseInfo;
-        
-        // Update progress
-        const totalExercises = this.currentSession.totalExercises;
-        const currentExerciseNumber = this.getCurrentExerciseNumber();
-        const progressPercent = (currentExerciseNumber / totalExercises) * 100;
-        
-        document.getElementById('workoutProgress').style.width = `${progressPercent}%`;
-        document.getElementById('progressText').textContent = `${currentExerciseNumber} of ${totalExercises}`;
-
-        // Reset timer
-        this.resetTimer();
-        
-        modal.classList.add('active');
-    }
-
-    getCurrentExerciseNumber() {
-        let count = 0;
-        for (let i = 0; i < this.currentPhaseIndex; i++) {
-            count += this.currentWorkout.phases[i].exercises.length;
-        }
-        return count + this.currentExerciseIndex + 1;
-    }
-
-    toggleTimer() {
-        const btn = document.getElementById('timerToggleBtn');
-        
-        if (this.timer) {
-            this.pauseTimer();
-            btn.textContent = 'Resume';
-        } else {
-            this.startTimer();
-            btn.textContent = 'Pause';
-        }
-    }
-
-    startTimer() {
-        this.timer = setInterval(() => {
-            this.timerSeconds++;
-            this.updateTimerDisplay();
-        }, 1000);
-    }
-
-    pauseTimer() {
-        if (this.timer) {
-            clearInterval(this.timer);
-            this.timer = null;
-        }
-    }
-
-    resetTimer() {
-        this.pauseTimer();
-        this.timerSeconds = 0;
-        this.updateTimerDisplay();
-        document.getElementById('timerToggleBtn').textContent = 'Start';
-    }
-
-    updateTimerDisplay() {
-        const minutes = Math.floor(this.timerSeconds / 60);
-        const seconds = this.timerSeconds % 60;
-        document.getElementById('timerDisplay').textContent = 
-            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    }
-
-    nextExercise() {
-        this.completeCurrentExercise();
-        
-        const phase = this.currentWorkout.phases[this.currentPhaseIndex];
-        
-        if (this.currentExerciseIndex < phase.exercises.length - 1) {
-            this.currentExerciseIndex++;
-        } else if (this.currentPhaseIndex < this.currentWorkout.phases.length - 1) {
-            this.currentPhaseIndex++;
-            this.currentExerciseIndex = 0;
-        } else {
-            // Workout complete
-            this.completeWorkout();
-            return;
-        }
-
-        // Show rest timer if needed
-        const exercise = phase.exercises[this.currentExerciseIndex - 1];
-        if (exercise && exercise.rest) {
-            this.showRestTimer(exercise.rest);
-        } else {
-            this.showExercise();
-        }
-    }
-
-    previousExercise() {
-        if (this.currentExerciseIndex > 0) {
-            this.currentExerciseIndex--;
-        } else if (this.currentPhaseIndex > 0) {
-            this.currentPhaseIndex--;
-            this.currentExerciseIndex = this.currentWorkout.phases[this.currentPhaseIndex].exercises.length - 1;
-        }
-        
-        this.showExercise();
-    }
-
-    showRestTimer(seconds) {
-        const modal = document.getElementById('timerModal');
-        let remainingSeconds = seconds;
-        
-        const updateRestDisplay = () => {
-            const mins = Math.floor(remainingSeconds / 60);
-            const secs = remainingSeconds % 60;
-            document.getElementById('restTimerDisplay').textContent = 
-                `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        };
-        
-        updateRestDisplay();
-        modal.classList.add('active');
-        
-        this.restTimer = setInterval(() => {
-            remainingSeconds--;
-            updateRestDisplay();
-            
-            if (remainingSeconds <= 0) {
-                this.skipRest();
-            }
-        }, 1000);
-    }
-
-    skipRest() {
-        if (this.restTimer) {
-            clearInterval(this.restTimer);
-            this.restTimer = null;
-        }
-        
-        document.getElementById('timerModal').classList.remove('active');
-        this.showExercise();
-    }
-
-    completeCurrentExercise() {
-        this.currentSession.completedExercises++;
-        
-        // Mark exercise as completed in UI
-        const exerciseElements = document.querySelectorAll('.exercise-item');
-        const currentIndex = this.getCurrentExerciseNumber() - 1;
-        if (exerciseElements[currentIndex]) {
-            exerciseElements[currentIndex].classList.add('completed');
-        }
-    }
-
-    completeWorkout() {
-        this.pauseTimer();
-        
-        // Calculate total duration
-        const endTime = new Date();
-        this.currentSession.duration = Math.round((endTime - this.workoutStartTime) / 60000); // in minutes
-        
-        // Save to history
-        this.workoutHistory.push(this.currentSession);
-        this.saveData();
-        
-        // Close modal
-        this.closeWorkoutModal();
-        
-        // Show completion message
-        alert(`Great job! You completed ${this.currentSession.completedExercises} exercises in ${this.currentSession.duration} minutes!`);
-        
-        // Refresh views
-        this.updateViews();
-        this.renderTodayWorkout();
-        
-        // Update button
-        document.getElementById('startWorkoutBtn').textContent = 'Workout Completed!';
-        document.getElementById('startWorkoutBtn').disabled = true;
-    }
-
-    closeWorkoutModal() {
-        document.getElementById('workoutModal').classList.remove('active');
-        this.pauseTimer();
+        document.getElementById('totalTime').textContent = `${totalWorkouts} workouts`;
     }
 
     isWorkoutCompletedToday(day) {
@@ -628,7 +681,7 @@ class WorkoutTracker {
         return this.workoutHistory.some(workout => {
             const workoutDate = new Date(workout.date);
             workoutDate.setHours(0, 0, 0, 0);
-            return workoutDate.getTime() === today.getTime() && workout.day === day;
+            return workoutDate.getTime() === today.getTime();
         });
     }
 
