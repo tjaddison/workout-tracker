@@ -6,78 +6,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 *For 49-year-old male, 270 lbs, targeting 40 lb weight loss*
 
 ## Weekly Schedule Overview
-- **Monday**: Upper Body Strength + Cardio
+- **Monday**: Full Body Circuit + Cardio
 - **Tuesday**: Rest Day
 - **Wednesday**: Rest Day  
-- **Thursday**: Lower Body Strength + Cardio (FIRST DAILY ROUTINE)
-- **Friday**: Full Body Circuit + Cardio
-- **Saturday/Sunday**: Upper Body Strength + Cardio
+- **Thursday**: Upper Body Strength + Cardio (FIRST DAILY ROUTINE)
+- **Friday**: Upper Body Strength + Cardio
+- **Saturday/Sunday**: Lower Body Strength + Cardio
 
 ---
 
-## MONDAY - Upper Body + Cardio (30-35 mins)
-
-### Warm-up (3 mins)
-- 3 minutes easy walking on treadmill or stationary bike
-
-### Strength Training - Upper Body (18 mins)
-*Low weight, high reps (15-20 reps, 2-3 sets)*
-
-1. **Chest Press Machine** - 3 sets x 15-20 reps
-2. **Lat Pulldown** - 3 sets x 15-20 reps  
-3. **Shoulder Press Machine** - 3 sets x 15-20 reps
-4. **Seated Cable Row** - 3 sets x 15-20 reps
-5. **Tricep Pushdowns** - 2 sets x 15-20 reps
-6. **Bicep Curls (dumbbells)** - 2 sets x 15-20 reps
-
-*Rest 30-45 seconds between sets*
-
-### Cardio Finish (12 mins)
-- 10 minutes moderate intensity on preferred cardio machine
-- 2 minutes cool-down walk
-
-### Sauna (10 mins)
-
----
-
-## TUESDAY - Rest Day
-
-Light walking, stretching, or complete rest - listen to your body!
-
----
-
-## WEDNESDAY - Rest Day
-
-Light walking, stretching, or complete rest - listen to your body!
-
----
-
-## THURSDAY - Lower Body Strength + Cardio (30-35 mins) - FIRST DAILY ROUTINE
-
-### Warm-up (3 mins)
-- 3 minutes easy walking or cycling
-
-### Strength Training - Lower Body (18 mins)
-*Low weight, high reps (15-20 reps, 2-3 sets)*
-
-1. **Leg Press Machine** - 3 sets x 15-20 reps
-2. **Leg Curl Machine** - 3 sets x 15-20 reps
-3. **Leg Extension Machine** - 3 sets x 15-20 reps  
-4. **Calf Raises** - 3 sets x 20-25 reps
-5. **Hip Abduction Machine** - 2 sets x 15-20 reps
-6. **Body Weight Squats** - 2 sets x 10-15 reps
-
-*Rest 30-45 seconds between sets*
-
-### Cardio Finish (12 mins)
-- 10 minutes moderate intensity
-- 2 minutes cool-down
-
-### Sauna (10 mins)
-
----
-
-## FRIDAY - Full Body Circuit + Cardio (30-35 mins)
+## MONDAY - Full Body Circuit + Cardio (30-35 mins)
 
 ### Warm-up (3 mins)
 - 3 minutes light movement
@@ -117,7 +55,19 @@ High-intensity barbell complex designed to burn fat while maintaining muscle mas
 
 ---
 
-## SATURDAY/SUNDAY - Upper Body + Cardio (30-35 mins)
+## TUESDAY - Rest Day
+
+Light walking, stretching, or complete rest - listen to your body!
+
+---
+
+## WEDNESDAY - Rest Day
+
+Light walking, stretching, or complete rest - listen to your body!
+
+---
+
+## THURSDAY - Upper Body Strength + Cardio (30-35 mins) - FIRST DAILY ROUTINE
 
 ### Warm-up (3 mins)
 - 3 minutes easy movement
@@ -131,6 +81,56 @@ High-intensity barbell complex designed to burn fat while maintaining muscle mas
 4. **Cable Chest Fly** - 3 sets x 15-20 reps
 5. **Hammer Curls** - 2 sets x 15-20 reps
 6. **Cable Tricep Extension** - 2 sets x 15-20 reps
+
+*Rest 30-45 seconds between sets*
+
+### Cardio Finish (12 mins)
+- 10 minutes moderate intensity
+- 2 minutes cool-down
+
+### Sauna (10 mins)
+
+---
+
+## FRIDAY - Upper Body Strength + Cardio (30-35 mins)
+
+### Warm-up (3 mins)
+- 3 minutes easy walking on treadmill or stationary bike
+
+### Strength Training - Upper Body (18 mins)
+*Low weight, high reps (15-20 reps, 2-3 sets)*
+
+1. **Chest Press Machine** - 3 sets x 15-20 reps
+2. **Lat Pulldown** - 3 sets x 15-20 reps  
+3. **Shoulder Press Machine** - 3 sets x 15-20 reps
+4. **Seated Cable Row** - 3 sets x 15-20 reps
+5. **Tricep Pushdowns** - 2 sets x 15-20 reps
+6. **Bicep Curls (dumbbells)** - 2 sets x 15-20 reps
+
+*Rest 30-45 seconds between sets*
+
+### Cardio Finish (12 mins)
+- 10 minutes moderate intensity on preferred cardio machine
+- 2 minutes cool-down walk
+
+### Sauna (10 mins)
+
+---
+
+## SATURDAY/SUNDAY - Lower Body Strength + Cardio (30-35 mins)
+
+### Warm-up (3 mins)
+- 3 minutes easy walking or cycling
+
+### Strength Training - Lower Body (18 mins)
+*Low weight, high reps (15-20 reps, 2-3 sets)*
+
+1. **Leg Press Machine** - 3 sets x 15-20 reps
+2. **Leg Curl Machine** - 3 sets x 15-20 reps
+3. **Leg Extension Machine** - 3 sets x 15-20 reps  
+4. **Calf Raises** - 3 sets x 20-25 reps
+5. **Hip Abduction Machine** - 2 sets x 15-20 reps
+6. **Body Weight Squats** - 2 sets x 10-15 reps
 
 *Rest 30-45 seconds between sets*
 

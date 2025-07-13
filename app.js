@@ -1,98 +1,6 @@
 // Workout data structure based on CLAUDE.md
 const workoutSchedule = {
     monday: {
-        name: "Upper Body + Cardio",
-        phases: [
-            {
-                name: "Warm-up",
-                exercises: [
-                    { name: "Treadmill/Bike", duration: 3, type: "cardio" }
-                ]
-            },
-            {
-                name: "Upper Body Strength",
-                exercises: [
-                    { name: "Chest Press Machine", sets: 3, reps: "15-20", rest: 45, weight: 50 },
-                    { name: "Lat Pulldown", sets: 3, reps: "15-20", rest: 45, weight: 90 },
-                    { name: "Shoulder Press Machine", sets: 3, reps: "15-20", rest: 45, weight: 40 },
-                    { name: "Seated Cable Row", sets: 3, reps: "15-20", rest: 45, weight: 70 },
-                    { name: "Tricep Pushdowns", sets: 2, reps: "15-20", rest: 45, weight: 35 },
-                    { name: "Bicep Curls", sets: 2, reps: "15-20", rest: 45, weight: 20 }
-                ]
-            },
-            {
-                name: "Cardio Finish",
-                exercises: [
-                    { name: "Moderate Cardio", duration: 10, type: "cardio" },
-                    { name: "Cool-down Walk", duration: 2, type: "cardio" }
-                ]
-            },
-            {
-                name: "Sauna",
-                exercises: [
-                    { name: "Sauna Session", duration: 10, type: "recovery" }
-                ]
-            }
-        ]
-    },
-    tuesday: {
-        name: "Rest Day",
-        phases: [
-            {
-                name: "Rest",
-                exercises: [
-                    { name: "Light walking, stretching, or complete rest", type: "rest" }
-                ]
-            }
-        ]
-    },
-    wednesday: {
-        name: "Rest Day",
-        phases: [
-            {
-                name: "Rest",
-                exercises: [
-                    { name: "Light walking, stretching, or complete rest", type: "rest" }
-                ]
-            }
-        ]
-    },
-    thursday: {
-        name: "Lower Body + Cardio (FIRST DAILY ROUTINE)",
-        phases: [
-            {
-                name: "Warm-up",
-                exercises: [
-                    { name: "Walking/Cycling", duration: 3, type: "cardio" }
-                ]
-            },
-            {
-                name: "Lower Body Strength",
-                exercises: [
-                    { name: "Leg Press Machine", sets: 3, reps: "15-20", rest: 45, weight: 135 },
-                    { name: "Leg Curl Machine", sets: 3, reps: "15-20", rest: 45, weight: 60 },
-                    { name: "Leg Extension Machine", sets: 3, reps: "15-20", rest: 45, weight: 80 },
-                    { name: "Calf Raises", sets: 3, reps: "20-25", rest: 45, weight: 100 },
-                    { name: "Hip Abduction Machine", sets: 2, reps: "15-20", rest: 45, weight: 50 },
-                    { name: "Body Weight Squats", sets: 2, reps: "10-15", rest: 45, weight: 0 }
-                ]
-            },
-            {
-                name: "Cardio Finish",
-                exercises: [
-                    { name: "Moderate Cardio", duration: 10, type: "cardio" },
-                    { name: "Cool-down", duration: 2, type: "cardio" }
-                ]
-            },
-            {
-                name: "Sauna",
-                exercises: [
-                    { name: "Sauna Session", duration: 10, type: "recovery" }
-                ]
-            }
-        ]
-    },
-    friday: {
         name: "Full Body Circuit + Cardio",
         phases: [
             {
@@ -128,8 +36,30 @@ const workoutSchedule = {
             }
         ]
     },
-    weekend: {
-        name: "Upper Body + Cardio",
+    tuesday: {
+        name: "Rest Day",
+        phases: [
+            {
+                name: "Rest",
+                exercises: [
+                    { name: "Light walking, stretching, or complete rest", type: "rest" }
+                ]
+            }
+        ]
+    },
+    wednesday: {
+        name: "Rest Day",
+        phases: [
+            {
+                name: "Rest",
+                exercises: [
+                    { name: "Light walking, stretching, or complete rest", type: "rest" }
+                ]
+            }
+        ]
+    },
+    thursday: {
+        name: "Upper Body + Cardio (FIRST DAILY ROUTINE)",
         phases: [
             {
                 name: "Warm-up",
@@ -146,6 +76,76 @@ const workoutSchedule = {
                     { name: "Cable Chest Fly", sets: 3, reps: "15-20", rest: 45, weight: 30 },
                     { name: "Hammer Curls", sets: 2, reps: "15-20", rest: 45, weight: 25 },
                     { name: "Cable Tricep Extension", sets: 2, reps: "15-20", rest: 45, weight: 40 }
+                ]
+            },
+            {
+                name: "Cardio Finish",
+                exercises: [
+                    { name: "Moderate Cardio", duration: 10, type: "cardio" },
+                    { name: "Cool-down", duration: 2, type: "cardio" }
+                ]
+            },
+            {
+                name: "Sauna",
+                exercises: [
+                    { name: "Sauna Session", duration: 10, type: "recovery" }
+                ]
+            }
+        ]
+    },
+    friday: {
+        name: "Upper Body + Cardio",
+        phases: [
+            {
+                name: "Warm-up",
+                exercises: [
+                    { name: "Treadmill/Bike", duration: 3, type: "cardio" }
+                ]
+            },
+            {
+                name: "Upper Body Strength",
+                exercises: [
+                    { name: "Chest Press Machine", sets: 3, reps: "15-20", rest: 45, weight: 50 },
+                    { name: "Lat Pulldown", sets: 3, reps: "15-20", rest: 45, weight: 90 },
+                    { name: "Shoulder Press Machine", sets: 3, reps: "15-20", rest: 45, weight: 40 },
+                    { name: "Seated Cable Row", sets: 3, reps: "15-20", rest: 45, weight: 70 },
+                    { name: "Tricep Pushdowns", sets: 2, reps: "15-20", rest: 45, weight: 35 },
+                    { name: "Bicep Curls", sets: 2, reps: "15-20", rest: 45, weight: 20 }
+                ]
+            },
+            {
+                name: "Cardio Finish",
+                exercises: [
+                    { name: "Moderate Cardio", duration: 10, type: "cardio" },
+                    { name: "Cool-down Walk", duration: 2, type: "cardio" }
+                ]
+            },
+            {
+                name: "Sauna",
+                exercises: [
+                    { name: "Sauna Session", duration: 10, type: "recovery" }
+                ]
+            }
+        ]
+    },
+    weekend: {
+        name: "Lower Body + Cardio",
+        phases: [
+            {
+                name: "Warm-up",
+                exercises: [
+                    { name: "Walking/Cycling", duration: 3, type: "cardio" }
+                ]
+            },
+            {
+                name: "Lower Body Strength",
+                exercises: [
+                    { name: "Leg Press Machine", sets: 3, reps: "15-20", rest: 45, weight: 135 },
+                    { name: "Leg Curl Machine", sets: 3, reps: "15-20", rest: 45, weight: 60 },
+                    { name: "Leg Extension Machine", sets: 3, reps: "15-20", rest: 45, weight: 80 },
+                    { name: "Calf Raises", sets: 3, reps: "20-25", rest: 45, weight: 100 },
+                    { name: "Hip Abduction Machine", sets: 2, reps: "15-20", rest: 45, weight: 50 },
+                    { name: "Body Weight Squats", sets: 2, reps: "10-15", rest: 45, weight: 0 }
                 ]
             },
             {
