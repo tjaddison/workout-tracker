@@ -48,6 +48,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+.gym-session-controls {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.session-timer {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    min-width: 80px;
+    text-align: center;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -610,6 +629,28 @@ body {
 .weight-input:focus {
     outline: none;
     border-color: var(--primary-color);
+}
+
+.reps-input {
+    flex: 1;
+    padding: 0.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    text-align: center;
+    max-width: 80px;
+}
+
+.reps-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.reps-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    min-width: 40px;
 }
 
 .reps-display {

@@ -7,11 +7,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Weekly Schedule Overview
 - **Monday**: Upper Body Strength + Cardio
-- **Tuesday**: Lower Body Strength + Cardio  
-- **Wednesday**: Cardio Focus Day
-- **Thursday**: Full Body Circuit + Cardio
-- **Friday**: Upper Body Strength + Cardio
-- **Weekend**: Rest or light walking
+- **Tuesday**: Rest Day
+- **Wednesday**: Rest Day  
+- **Thursday**: Lower Body Strength + Cardio (FIRST DAILY ROUTINE)
+- **Friday**: Full Body Circuit + Cardio
+- **Saturday/Sunday**: Upper Body Strength + Cardio
 
 ---
 
@@ -40,7 +40,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ---
 
-## TUESDAY - Lower Body + Cardio (30-35 mins)
+## TUESDAY - Rest Day
+
+Light walking, stretching, or complete rest - listen to your body!
+
+---
+
+## WEDNESDAY - Rest Day
+
+Light walking, stretching, or complete rest - listen to your body!
+
+---
+
+## THURSDAY - Lower Body Strength + Cardio (30-35 mins) - FIRST DAILY ROUTINE
 
 ### Warm-up (3 mins)
 - 3 minutes easy walking or cycling
@@ -65,31 +77,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ---
 
-## WEDNESDAY - Cardio Focus (30-35 mins)
-
-### Extended Cardio Session
-Choose 1-2 activities:
-
-**Option A: Steady State**
-- 25 minutes moderate intensity on one machine
-- 5 minutes cool-down
-
-**Option B: Interval Training**
-- 5 minutes warm-up
-- 20 minutes intervals: 2 minutes moderate, 1 minute higher intensity (repeat)
-- 5 minutes cool-down
-
-**Machine Suggestions:**
-- Treadmill (walking with incline)
-- Elliptical
-- Stationary bike
-- Rowing machine
-
-### Sauna (10 mins)
-
----
-
-## THURSDAY - Full Body Circuit + Cardio (30-35 mins)
+## FRIDAY - Full Body Circuit + Cardio (30-35 mins)
 
 ### Warm-up (3 mins)
 - 3 minutes light movement
@@ -129,7 +117,7 @@ High-intensity barbell complex designed to burn fat while maintaining muscle mas
 
 ---
 
-## FRIDAY - Upper Body + Cardio (30-35 mins)
+## SATURDAY/SUNDAY - Upper Body + Cardio (30-35 mins)
 
 ### Warm-up (3 mins)
 - 3 minutes easy movement
@@ -142,7 +130,7 @@ High-intensity barbell complex designed to burn fat while maintaining muscle mas
 3. **Lateral Raises** - 3 sets x 15-20 reps
 4. **Cable Chest Fly** - 3 sets x 15-20 reps
 5. **Hammer Curls** - 2 sets x 15-20 reps
-6. **Overhead Tricep Extension** - 2 sets x 15-20 reps
+6. **Cable Tricep Extension** - 2 sets x 15-20 reps
 
 *Rest 30-45 seconds between sets*
 

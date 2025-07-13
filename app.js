@@ -12,12 +12,12 @@ const workoutSchedule = {
             {
                 name: "Upper Body Strength",
                 exercises: [
-                    { name: "Chest Press Machine", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Lat Pulldown", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Shoulder Press Machine", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Seated Cable Row", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Tricep Pushdowns", sets: 2, reps: "15-20", rest: 45 },
-                    { name: "Bicep Curls", sets: 2, reps: "15-20", rest: 45 }
+                    { name: "Chest Press Machine", sets: 3, reps: "15-20", rest: 45, weight: 50 },
+                    { name: "Lat Pulldown", sets: 3, reps: "15-20", rest: 45, weight: 90 },
+                    { name: "Shoulder Press Machine", sets: 3, reps: "15-20", rest: 45, weight: 40 },
+                    { name: "Seated Cable Row", sets: 3, reps: "15-20", rest: 45, weight: 70 },
+                    { name: "Tricep Pushdowns", sets: 2, reps: "15-20", rest: 45, weight: 35 },
+                    { name: "Bicep Curls", sets: 2, reps: "15-20", rest: 45, weight: 20 }
                 ]
             },
             {
@@ -36,7 +36,29 @@ const workoutSchedule = {
         ]
     },
     tuesday: {
-        name: "Lower Body + Cardio",
+        name: "Rest Day",
+        phases: [
+            {
+                name: "Rest",
+                exercises: [
+                    { name: "Light walking, stretching, or complete rest", type: "rest" }
+                ]
+            }
+        ]
+    },
+    wednesday: {
+        name: "Rest Day",
+        phases: [
+            {
+                name: "Rest",
+                exercises: [
+                    { name: "Light walking, stretching, or complete rest", type: "rest" }
+                ]
+            }
+        ]
+    },
+    thursday: {
+        name: "Lower Body + Cardio (FIRST DAILY ROUTINE)",
         phases: [
             {
                 name: "Warm-up",
@@ -47,12 +69,12 @@ const workoutSchedule = {
             {
                 name: "Lower Body Strength",
                 exercises: [
-                    { name: "Leg Press Machine", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Leg Curl Machine", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Leg Extension Machine", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Calf Raises", sets: 3, reps: "20-25", rest: 45 },
-                    { name: "Hip Abduction Machine", sets: 2, reps: "15-20", rest: 45 },
-                    { name: "Body Weight Squats", sets: 2, reps: "10-15", rest: 45 }
+                    { name: "Leg Press Machine", sets: 3, reps: "15-20", rest: 45, weight: 135 },
+                    { name: "Leg Curl Machine", sets: 3, reps: "15-20", rest: 45, weight: 60 },
+                    { name: "Leg Extension Machine", sets: 3, reps: "15-20", rest: 45, weight: 80 },
+                    { name: "Calf Raises", sets: 3, reps: "20-25", rest: 45, weight: 100 },
+                    { name: "Hip Abduction Machine", sets: 2, reps: "15-20", rest: 45, weight: 50 },
+                    { name: "Body Weight Squats", sets: 2, reps: "10-15", rest: 45, weight: 0 }
                 ]
             },
             {
@@ -70,26 +92,7 @@ const workoutSchedule = {
             }
         ]
     },
-    wednesday: {
-        name: "Cardio Focus",
-        phases: [
-            {
-                name: "Extended Cardio",
-                exercises: [
-                    { name: "Warm-up", duration: 5, type: "cardio" },
-                    { name: "Cardio Intervals", duration: 20, type: "cardio", description: "2 min moderate, 1 min high intensity" },
-                    { name: "Cool-down", duration: 5, type: "cardio" }
-                ]
-            },
-            {
-                name: "Sauna",
-                exercises: [
-                    { name: "Sauna Session", duration: 10, type: "recovery" }
-                ]
-            }
-        ]
-    },
-    thursday: {
+    friday: {
         name: "Full Body Circuit + Cardio",
         phases: [
             {
@@ -101,11 +104,11 @@ const workoutSchedule = {
             {
                 name: "Barbell Complex",
                 exercises: [
-                    { name: "Military Press", reps: 6, complex: true, sets: 1 },
-                    { name: "Front Squats", reps: 7, complex: true, sets: 1 },
-                    { name: "Bent Over Rows", reps: 8, complex: true, sets: 1 },
-                    { name: "Romanian Deadlifts", reps: 9, complex: true, sets: 1 },
-                    { name: "Back Squats", reps: 10, complex: true, sets: 1 }
+                    { name: "Military Press", reps: 6, complex: true, sets: 1, weight: 65 },
+                    { name: "Front Squats", reps: 7, complex: true, sets: 1, weight: 65 },
+                    { name: "Bent Over Rows", reps: 8, complex: true, sets: 1, weight: 65 },
+                    { name: "Romanian Deadlifts", reps: 9, complex: true, sets: 1, weight: 65 },
+                    { name: "Back Squats", reps: 10, complex: true, sets: 1, weight: 65 }
                 ],
                 rounds: "5-10",
                 weight: "65-75 lbs"
@@ -125,7 +128,7 @@ const workoutSchedule = {
             }
         ]
     },
-    friday: {
+    weekend: {
         name: "Upper Body + Cardio",
         phases: [
             {
@@ -137,12 +140,12 @@ const workoutSchedule = {
             {
                 name: "Upper Body Strength",
                 exercises: [
-                    { name: "Incline Chest Press", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Wide-Grip Pulldown", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Lateral Raises", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Cable Chest Fly", sets: 3, reps: "15-20", rest: 45 },
-                    { name: "Hammer Curls", sets: 2, reps: "15-20", rest: 45 },
-                    { name: "Overhead Tricep Extension", sets: 2, reps: "15-20", rest: 45 }
+                    { name: "Incline Chest Press", sets: 3, reps: "15-20", rest: 45, weight: 45 },
+                    { name: "Wide-Grip Pulldown", sets: 3, reps: "15-20", rest: 45, weight: 80 },
+                    { name: "Lateral Raises", sets: 3, reps: "15-20", rest: 45, weight: 15 },
+                    { name: "Cable Chest Fly", sets: 3, reps: "15-20", rest: 45, weight: 30 },
+                    { name: "Hammer Curls", sets: 2, reps: "15-20", rest: 45, weight: 25 },
+                    { name: "Cable Tricep Extension", sets: 2, reps: "15-20", rest: 45, weight: 40 }
                 ]
             },
             {
@@ -171,10 +174,13 @@ class WorkoutTracker {
         this.currentExerciseIndex = 0;
         this.currentPhaseIndex = 0;
         this.currentSession = null;
+        this.gymSession = null;
+        this.gymTimer = null;
         
         this.loadData();
         this.bindEvents();
         this.updateViews();
+        this.restoreGymSession();
     }
 
     loadData() {
@@ -183,11 +189,15 @@ class WorkoutTracker {
             defaultWeight: 45,
             weightUnit: 'lbs'
         };
+        this.gymSession = JSON.parse(localStorage.getItem('gymSession')) || null;
+        this.exerciseWeights = JSON.parse(localStorage.getItem('exerciseWeights')) || {};
     }
 
     saveData() {
         localStorage.setItem('workoutHistory', JSON.stringify(this.workoutHistory));
         localStorage.setItem('userSettings', JSON.stringify(this.userSettings));
+        localStorage.setItem('gymSession', JSON.stringify(this.gymSession));
+        localStorage.setItem('exerciseWeights', JSON.stringify(this.exerciseWeights));
     }
 
     bindEvents() {
@@ -240,6 +250,91 @@ class WorkoutTracker {
         document.getElementById('prevExerciseBtn').addEventListener('click', () => {
             this.previousExercise();
         });
+
+        // Gym session controls
+        document.getElementById('checkinBtn').addEventListener('click', () => {
+            this.checkInToGym();
+        });
+
+        document.getElementById('checkoutBtn').addEventListener('click', () => {
+            this.checkOutOfGym();
+        });
+    }
+
+    checkInToGym() {
+        this.gymSession = {
+            checkInTime: new Date().toISOString(),
+            checkOutTime: null
+        };
+        
+        document.getElementById('checkinBtn').disabled = true;
+        document.getElementById('checkoutBtn').disabled = false;
+        
+        this.startGymTimer();
+        this.saveData();
+    }
+
+    checkOutOfGym() {
+        if (!this.gymSession) return;
+        
+        this.gymSession.checkOutTime = new Date().toISOString();
+        const duration = this.calculateGymDuration();
+        
+        document.getElementById('checkinBtn').disabled = false;
+        document.getElementById('checkoutBtn').disabled = true;
+        document.getElementById('sessionTimer').textContent = '';
+        
+        if (this.gymTimer) {
+            clearInterval(this.gymTimer);
+            this.gymTimer = null;
+        }
+        
+        alert(`Gym session complete! Total time: ${duration}`);
+        this.gymSession = null;
+        this.saveData();
+    }
+
+    startGymTimer() {
+        this.updateGymTimer();
+        this.gymTimer = setInterval(() => {
+            this.updateGymTimer();
+        }, 1000);
+    }
+
+    updateGymTimer() {
+        if (!this.gymSession || !this.gymSession.checkInTime) return;
+        
+        const now = new Date();
+        const checkIn = new Date(this.gymSession.checkInTime);
+        const diff = now - checkIn;
+        
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        document.getElementById('sessionTimer').textContent = timeString;
+    }
+
+    calculateGymDuration() {
+        if (!this.gymSession || !this.gymSession.checkInTime || !this.gymSession.checkOutTime) return '0:00';
+        
+        const checkIn = new Date(this.gymSession.checkInTime);
+        const checkOut = new Date(this.gymSession.checkOutTime);
+        const diff = checkOut - checkIn;
+        
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        
+        return hours > 0 ? `${hours}:${minutes.toString().padStart(2, '0')}` : `${minutes} min`;
+    }
+
+    restoreGymSession() {
+        if (this.gymSession && this.gymSession.checkInTime && !this.gymSession.checkOutTime) {
+            document.getElementById('checkinBtn').disabled = true;
+            document.getElementById('checkoutBtn').disabled = false;
+            this.startGymTimer();
+        }
     }
 
     openMenu() {
@@ -470,7 +565,8 @@ class WorkoutTracker {
         container.innerHTML = '';
         
         for (let i = 0; i < exercise.sets; i++) {
-            const savedSet = savedSets[i] || { weight: this.userSettings.defaultWeight, completed: false };
+            const defaultWeight = exercise.weight || this.exerciseWeights[exercise.name] || this.userSettings.defaultWeight;
+            const savedSet = savedSets[i] || { weight: defaultWeight, completed: false, actualReps: 0 };
             
             const setDiv = document.createElement('div');
             setDiv.className = `set-item ${savedSet.completed ? 'completed' : ''}`;
@@ -482,7 +578,12 @@ class WorkoutTracker {
                        placeholder="Weight"
                        data-set="${i}">
                 <span class="weight-unit">${this.userSettings.weightUnit}</span>
-                <span class="reps-display">${exercise.reps}</span>
+                <input type="number" 
+                       class="reps-input" 
+                       value="${savedSet.actualReps || ''}" 
+                       placeholder="${exercise.reps}"
+                       data-set="${i}">
+                <span class="reps-label">reps</span>
                 <button class="set-complete-btn ${savedSet.completed ? 'completed' : ''}" 
                         data-set="${i}">
                     ${savedSet.completed ? '✓' : 'Complete'}
@@ -491,10 +592,16 @@ class WorkoutTracker {
             container.appendChild(setDiv);
         }
 
-        // Bind events for weight inputs and complete buttons
+        // Bind events for weight inputs, reps inputs, and complete buttons
         container.querySelectorAll('.weight-input').forEach(input => {
             input.addEventListener('change', (e) => {
                 this.updateSetWeight(exerciseKey, parseInt(e.target.dataset.set), parseFloat(e.target.value));
+            });
+        });
+
+        container.querySelectorAll('.reps-input').forEach(input => {
+            input.addEventListener('change', (e) => {
+                this.updateSetReps(exerciseKey, parseInt(e.target.dataset.set), parseInt(e.target.value));
             });
         });
 
@@ -520,9 +627,39 @@ class WorkoutTracker {
         }
 
         if (!exerciseData.sets[setIndex]) {
-            exerciseData.sets[setIndex] = { weight: weight, completed: false };
+            exerciseData.sets[setIndex] = { weight: weight, completed: false, actualReps: 0 };
         } else {
             exerciseData.sets[setIndex].weight = weight;
+        }
+        
+        // Save exercise weight for future use
+        const phase = this.selectedWorkout.phases[this.currentPhaseIndex];
+        const exercise = phase.exercises[this.currentExerciseIndex];
+        this.exerciseWeights[exercise.name] = weight;
+        this.saveData();
+    }
+
+    updateSetReps(exerciseKey, setIndex, reps) {
+        let exerciseData = this.currentSession.exercises.find(e => e.key === exerciseKey);
+        
+        if (!exerciseData) {
+            const phase = this.selectedWorkout.phases[this.currentPhaseIndex];
+            const exercise = phase.exercises[this.currentExerciseIndex];
+            exerciseData = {
+                key: exerciseKey,
+                name: exercise.name,
+                sets: []
+            };
+            this.currentSession.exercises.push(exerciseData);
+        }
+
+        if (!exerciseData.sets[setIndex]) {
+            const phase = this.selectedWorkout.phases[this.currentPhaseIndex];
+            const exercise = phase.exercises[this.currentExerciseIndex];
+            const defaultWeight = exercise.weight || this.exerciseWeights[exercise.name] || this.userSettings.defaultWeight;
+            exerciseData.sets[setIndex] = { weight: defaultWeight, completed: false, actualReps: reps };
+        } else {
+            exerciseData.sets[setIndex].actualReps = reps;
         }
     }
 
@@ -541,7 +678,10 @@ class WorkoutTracker {
         }
 
         if (!exerciseData.sets[setIndex]) {
-            exerciseData.sets[setIndex] = { weight: this.userSettings.defaultWeight, completed: false };
+            const phase = this.selectedWorkout.phases[this.currentPhaseIndex];
+            const exercise = phase.exercises[this.currentExerciseIndex];
+            const defaultWeight = exercise.weight || this.exerciseWeights[exercise.name] || this.userSettings.defaultWeight;
+            exerciseData.sets[setIndex] = { weight: defaultWeight, completed: false, actualReps: 0 };
         }
 
         exerciseData.sets[setIndex].completed = !exerciseData.sets[setIndex].completed;
@@ -625,7 +765,13 @@ class WorkoutTracker {
         const today = new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
         
         scheduleGrid.innerHTML = days.map(day => {
-            const workout = workoutSchedule[day];
+            let workout;
+            if (day === 'saturday' || day === 'sunday') {
+                workout = workoutSchedule['weekend'];
+            } else {
+                workout = workoutSchedule[day];
+            }
+            
             const isToday = day === today;
             const isCompleted = this.isWorkoutCompletedToday(day);
             
