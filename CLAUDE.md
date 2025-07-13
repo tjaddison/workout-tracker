@@ -10,8 +10,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Tuesday**: Rest Day
 - **Wednesday**: Rest Day  
 - **Thursday**: Upper Body Strength + Cardio (FIRST DAILY ROUTINE)
-- **Friday**: Upper Body Strength + Cardio
-- **Saturday/Sunday**: Lower Body Strength + Cardio
+- **Friday**: Lower Body Strength + Cardio
+- **Saturday/Sunday**: Upper Body Strength + Cardio
 
 ---
 
@@ -92,32 +92,7 @@ Light walking, stretching, or complete rest - listen to your body!
 
 ---
 
-## FRIDAY - Upper Body Strength + Cardio (30-35 mins)
-
-### Warm-up (3 mins)
-- 3 minutes easy walking on treadmill or stationary bike
-
-### Strength Training - Upper Body (18 mins)
-*Low weight, high reps (15-20 reps, 2-3 sets)*
-
-1. **Chest Press Machine** - 3 sets x 15-20 reps
-2. **Lat Pulldown** - 3 sets x 15-20 reps  
-3. **Shoulder Press Machine** - 3 sets x 15-20 reps
-4. **Seated Cable Row** - 3 sets x 15-20 reps
-5. **Tricep Pushdowns** - 2 sets x 15-20 reps
-6. **Bicep Curls (dumbbells)** - 2 sets x 15-20 reps
-
-*Rest 30-45 seconds between sets*
-
-### Cardio Finish (12 mins)
-- 10 minutes moderate intensity on preferred cardio machine
-- 2 minutes cool-down walk
-
-### Sauna (10 mins)
-
----
-
-## SATURDAY/SUNDAY - Lower Body Strength + Cardio (30-35 mins)
+## FRIDAY - Lower Body Strength + Cardio (30-35 mins)
 
 ### Warm-up (3 mins)
 - 3 minutes easy walking or cycling
@@ -137,6 +112,31 @@ Light walking, stretching, or complete rest - listen to your body!
 ### Cardio Finish (12 mins)
 - 10 minutes moderate intensity
 - 2 minutes cool-down
+
+### Sauna (10 mins)
+
+---
+
+## SATURDAY/SUNDAY - Upper Body Strength + Cardio (30-35 mins)
+
+### Warm-up (3 mins)
+- 3 minutes easy walking on treadmill or stationary bike
+
+### Strength Training - Upper Body (18 mins)
+*Low weight, high reps (15-20 reps, 2-3 sets)*
+
+1. **Chest Press Machine** - 3 sets x 15-20 reps
+2. **Lat Pulldown** - 3 sets x 15-20 reps  
+3. **Shoulder Press Machine** - 3 sets x 15-20 reps
+4. **Seated Cable Row** - 3 sets x 15-20 reps
+5. **Tricep Pushdowns** - 2 sets x 15-20 reps
+6. **Bicep Curls (dumbbells)** - 2 sets x 15-20 reps
+
+*Rest 30-45 seconds between sets*
+
+### Cardio Finish (12 mins)
+- 10 minutes moderate intensity on preferred cardio machine
+- 2 minutes cool-down walk
 
 ### Sauna (10 mins)
 
