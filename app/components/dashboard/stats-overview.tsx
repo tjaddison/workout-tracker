@@ -1,13 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { TrendingUp, Target, Clock, Fire } from 'lucide-react'
+import { TrendingUp, Target, Clock, Flame } from 'lucide-react'
 
 export function StatsOverview() {
   // Mock data - would be fetched from API in real app
   const stats = [
     {
-      icon: Fire,
+      icon: Flame,
       label: 'Week Streak',
       value: '7',
       change: '+2',

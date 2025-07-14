@@ -10,13 +10,14 @@ import { StatsOverview } from '../components/dashboard/stats-overview'
 import { GymSession } from '../components/dashboard/gym-session'
 import { QuickActions } from '../components/dashboard/quick-actions'
 import { workoutSchedule, getTodaysWorkout } from '../lib/workouts'
+import type { WorkoutSchedule } from '../types'
 import { LoadingSpinner } from '../components/ui/loading-spinner'
 import toast from 'react-hot-toast'
 
 export default function Dashboard() {
   const { data: session } = useSession()
   const [isLoading, setIsLoading] = useState(true)
-  const [todaysWorkout, setTodaysWorkout] = useState(null)
+  const [todaysWorkout, setTodaysWorkout] = useState<WorkoutSchedule | null>(null)
   const [gymSessionActive, setGymSessionActive] = useState(false)
   const [sessionStartTime, setSessionStartTime] = useState<Date | null>(null)
 
