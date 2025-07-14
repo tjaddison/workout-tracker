@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { useUserProfile, useWorkouts } from '@/app/lib/hooks'
 import toast from 'react-hot-toast'
+import Image from 'next/image'
 
 export default function ProfilePage() {
   const router = useRouter()
@@ -146,8 +147,19 @@ export default function ProfilePage() {
           className="card mb-6"
         >
           <div className="flex items-center gap-6 mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-              <User className="h-10 w-10 text-white" />
+            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center overflow-hidden">
+              {profile?.user?.image ? (
+                <Image
+                  src={profile.user.image}
+                  alt={`${userProfile.name}'s profile picture`}
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              ) : (
+                <User className="h-10 w-10 text-white" />
+              )}
             </div>
             <div>
               <h2 className="text-xl font-bold">{userProfile.name}</h2>
