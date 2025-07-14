@@ -69,12 +69,12 @@ export default function SignIn() {
               <h1 className="text-3xl font-bold text-white">FitTracker Pro</h1>
             </div>
             
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 leading-tight">
               Your Personal
               <span className="text-gradient block">Fitness Journey</span>
             </h2>
             
-            <p className="text-xl text-primary-100 mb-12 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-primary-100 mb-8 sm:mb-12 leading-relaxed">
               Transform your workouts with intelligent tracking, personalized insights, and seamless progress monitoring.
             </p>
           </motion.div>
@@ -105,7 +105,7 @@ export default function SignIn() {
       </div>
 
       {/* Right side - Sign In */}
-      <div className="flex-1 flex items-center justify-center p-8 lg:p-12">
+      <div className="flex-1 flex items-center justify-center p-4 sm:p-8 lg:p-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}

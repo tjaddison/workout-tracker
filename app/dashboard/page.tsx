@@ -77,14 +77,9 @@ export default function Dashboard() {
         <DashboardHeader user={session?.user} />
         
         <main className="safe-area-top px-4 pb-24">
-          <div className="max-w-lg mx-auto space-y-6">
+          <div className="max-w-lg mx-auto space-y-4 sm:space-y-6">
             {/* Gym Session Status */}
-            <GymSession
-              isActive={gymSessionActive}
-              startTime={sessionStartTime}
-              onStart={handleStartGymSession}
-              onEnd={handleEndGymSession}
-            />
+            <GymSession />
 
             {/* Stats Overview */}
             <StatsOverview />

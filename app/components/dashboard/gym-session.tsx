@@ -4,16 +4,15 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Play, Square, Clock, Zap } from 'lucide-react'
 import { formatDuration } from '@/app/lib/utils'
+import { useGymSessions } from '@/app/lib/hooks'
 
-interface GymSessionProps {
-  isActive: boolean
-  startTime: Date | null
-  onStart: () => void
-  onEnd: () => void
-}
-
-export function GymSession({ isActive, startTime, onStart, onEnd }: GymSessionProps) {
+export function GymSession() {
+  const { checkIn, checkOut, getCurrentSession, loading } = useGymSessions()
   const [currentTime, setCurrentTime] = useState(new Date())
+  
+  const currentSession = getCurrentSession()
+  const isActive = !!currentSession
+  const startTime = currentSession ? new Date(currentSession.checkInTime) : null
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -28,16 +27,28 @@ export function GymSession({ isActive, startTime, onStart, onEnd }: GymSessionPr
     return Math.floor((currentTime.getTime() - startTime.getTime()) / 1000)
   }
 
+  const handleStart = async () => {
+    if (!loading) {
+      await checkIn()
+    }
+  }
+
+  const handleEnd = async () => {
+    if (!loading && currentSession) {
+      await checkOut(currentSession.sessionId)
+    }
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`card ${isActive ? 'bg-gradient-to-r from-secondary-600/20 to-primary-600/20 border-secondary-500/30' : ''}`}
+      className={`card ${isActive ? 'bg-gradient-to-r from-green-600/20 to-blue-600/20 border-green-500/30' : ''}`}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className={`p-3 rounded-full ${isActive ? 'bg-secondary-500' : 'bg-dark-700'}`}>
+          <div className={`p-3 rounded-full ${isActive ? 'bg-green-500' : 'bg-dark-700'}`}>
             {isActive ? (
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}
@@ -59,7 +70,7 @@ export function GymSession({ isActive, startTime, onStart, onEnd }: GymSessionPr
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="text-sm text-secondary-400 font-mono"
+                  className="text-sm text-green-400 font-mono"
                 >
                   {formatDuration(getSessionDuration())}
                 </motion.p>
@@ -81,14 +92,17 @@ export function GymSession({ isActive, startTime, onStart, onEnd }: GymSessionPr
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={isActive ? onEnd : onStart}
+          onClick={isActive ? handleEnd : handleStart}
+          disabled={loading}
           className={`btn ${
             isActive 
               ? 'bg-red-600 hover:bg-red-700 text-white' 
-              : 'btn-primary'
-          }`}
+              : 'bg-blue-600 hover:bg-blue-700 text-white'
+          } disabled:opacity-50 disabled:cursor-not-allowed`}
         >
-          {isActive ? (
+          {loading ? (
+            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+          ) : isActive ? (
             <>
               <Square className="h-4 w-4 mr-2" />
               End

@@ -1,42 +1,67 @@
-# FitTracker Pro - Premium Workout Tracker
+# 🏋️ Workout Tracker - Production Ready Fitness App
 
-A modern, mobile-first workout tracking application built with Next.js 14, featuring Google authentication, AWS DynamoDB backend, and award-winning UI/UX design.
+A comprehensive, production-ready fitness tracking application built with Next.js 14, featuring real-time workout tracking, progress monitoring, Google OAuth authentication, and full AWS DynamoDB integration.
 
-## 🚀 Features
+## ✨ Features
 
-- **Google OAuth Authentication** - Secure login with Google accounts
-- **Real-time Workout Tracking** - Track sets, reps, weights, and gym sessions
-- **Cloud Sync** - All data stored securely in AWS DynamoDB
-- **Mobile-First Design** - Optimized for mobile devices with PWA support
-- **Smart Analytics** - Progress tracking and workout insights
-- **Gym Session Timer** - Built-in timer for tracking gym sessions
+- **🔐 Google OAuth Authentication** - Secure login with NextAuth.js
+- **🏋️‍♂️ Real-time Workout Tracking** - Track exercises, sets, reps, and weights
+- **📊 Progress Monitoring** - Weight loss tracking and goal management
+- **📅 Schedule Management** - Complete 5-Day YMCA Weight Loss Program
+- **⏱️ Gym Session Tracking** - Check-in/check-out functionality with timer
+- **📈 Analytics Dashboard** - Real-time progress charts and statistics
+- **⚙️ User Settings** - Customizable preferences and notifications
+- **📱 Responsive Design** - Mobile-first approach with Tailwind CSS
+- **☁️ Cloud Storage** - All data stored securely in AWS DynamoDB
+- **🔄 Real-time Sync** - Data synchronization across devices
 
 ## 🛠 Tech Stack
 
-- **Frontend**: Next.js 14, React, TypeScript, Tailwind CSS
-- **Authentication**: NextAuth.js with Google Provider
-- **Backend**: AWS DynamoDB
-- **Deployment**: Vercel
-- **Animations**: Framer Motion
-- **UI Components**: Custom components with Lucide icons
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS, Framer Motion
+- **Authentication**: NextAuth.js with Google OAuth
+- **Database**: AWS DynamoDB with custom hooks
+- **State Management**: React Hooks + Custom Hooks
+- **Icons**: Lucide React
+- **Build Tools**: ESLint, TypeScript Compiler
+- **Deployment**: Vercel Ready
 
-## 📱 Workout Schedule
+## 🏋️‍♂️ Complete Workout Program
 
-- **Monday**: Full Body Circuit + Cardio
+**5-Day YMCA Weight Loss Program** - Professionally designed for 49-year-old male, 270 lbs, targeting 40 lb weight loss:
+
+- **Monday**: Full Body Circuit + Cardio (35 mins) - Barbell complex training
 - **Tuesday**: Rest Day
-- **Wednesday**: Rest Day
-- **Thursday**: Upper Body + Cardio (First Daily Routine)
-- **Friday**: Lower Body + Cardio
-- **Weekend**: Upper Body + Cardio
+- **Wednesday**: Rest Day  
+- **Thursday**: Upper Body Strength + Cardio (35 mins) - FIRST DAILY ROUTINE
+- **Friday**: Lower Body Strength + Cardio (35 mins)
+- **Saturday**: Upper Body Strength + Cardio (35 mins)
+- **Sunday**: Upper Body Strength + Cardio (35 mins)
 
-## 🔧 Environment Variables
+## 🚀 Quick Start
 
-Create a `.env.local` file with the following variables:
+### Prerequisites
+
+- Node.js 18+ 
+- AWS Account (for DynamoDB)
+- Google OAuth credentials
+
+### 1. Clone and Install
+
+```bash
+git clone <repository-url>
+cd workout-tracker
+npm install
+```
+
+### 2. Environment Setup
+
+Create `.env.local` with your credentials:
 
 ```env
 # NextAuth Configuration
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your-secret-key
+NEXTAUTH_SECRET=your-nextauth-secret
 
 # Google OAuth
 GOOGLE_CLIENT_ID=your-google-client-id
@@ -48,27 +73,21 @@ AWS_SECRET_ACCESS_KEY=your-aws-secret-key
 AWS_REGION=us-east-1
 ```
 
-## 🚀 Getting Started
+### 3. Create Database Tables
 
-1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/workout-tracker.git
-cd workout-tracker
+npm run create-tables
 ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+This automatically creates all required DynamoDB tables with proper indexes.
 
-3. Set up environment variables (see above)
+### 4. Start Development Server
 
-4. Run the development server:
 ```bash
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+Visit [http://localhost:3000](http://localhost:3000)
 
 ## 📊 Database Schema
 

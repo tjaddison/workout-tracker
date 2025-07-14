@@ -1,15 +1,22 @@
 'use client'
 
+import { useState, useRef } from 'react'
 import { signOut } from 'next-auth/react'
 import { motion } from 'framer-motion'
 import { User, LogOut, Settings } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import { SettingsMenu } from './settings-menu'
 
 interface DashboardHeaderProps {
   user?: any
 }
 
 export function DashboardHeader({ user }: DashboardHeaderProps) {
+  const router = useRouter()
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false)
+  const settingsButtonRef = useRef<HTMLButtonElement>(null)
+  
   const getGreeting = () => {
     const hour = new Date().getHours()
     if (hour < 12) return 'Good morning'
@@ -47,23 +54,40 @@ export function DashboardHeader({ user }: DashboardHeaderProps) {
           </div>
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 relative">
           <motion.button
+            ref={settingsButtonRef}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="p-2 rounded-xl bg-dark-800/50 hover:bg-dark-700/50 transition-colors"
+            onClick={() => setIsSettingsOpen(!isSettingsOpen)}
+            className={`p-3 rounded-xl transition-colors min-h-[48px] min-w-[48px] ${
+              isSettingsOpen 
+                ? 'bg-blue-600/20 border border-blue-500/30' 
+                : 'bg-dark-800/50 hover:bg-dark-700/50'
+            }`}
+            aria-label="Settings"
           >
-            <Settings className="h-5 w-5 text-dark-400" />
+            <Settings className={`h-5 w-5 transition-colors ${
+              isSettingsOpen ? 'text-blue-400' : 'text-dark-400'
+            }`} />
           </motion.button>
           
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => signOut({ callbackUrl: '/auth/signin' })}
-            className="p-2 rounded-xl bg-dark-800/50 hover:bg-red-500/20 transition-colors"
+            className="p-3 rounded-xl bg-dark-800/50 hover:bg-red-500/20 transition-colors min-h-[48px] min-w-[48px]"
+            aria-label="Sign out"
           >
             <LogOut className="h-5 w-5 text-dark-400 hover:text-red-400" />
           </motion.button>
+
+          {/* Settings Menu */}
+          <SettingsMenu 
+            isOpen={isSettingsOpen}
+            onClose={() => setIsSettingsOpen(false)}
+            anchorRef={settingsButtonRef}
+          />
         </div>
       </div>
     </motion.header>

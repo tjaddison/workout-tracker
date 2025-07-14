@@ -1,6 +1,7 @@
 import { getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import type { NextAuthOptions } from 'next-auth'
+import { createUser, getUser } from './dynamodb'
 
 const authOptions: NextAuthOptions = {
   providers: [
@@ -10,15 +11,46 @@ const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
+    async signIn({ user, account, profile }) {
+      if (account?.provider === 'google') {
+        try {
+          // Use email as user ID for consistency if user.id is not available
+          const userId = user.id || user.email || account.providerAccountId
+          
+          // Check if user exists in database
+          const existingUser = await getUser(userId)
+          
+          if (!existingUser) {
+            // Create new user in database
+            await createUser({
+              id: userId,
+              email: user.email,
+              name: user.name,
+              image: user.image,
+            })
+          }
+          
+          // Ensure user.id is set for session
+          user.id = userId
+          return true
+        } catch (error) {
+          console.error('Error during sign in:', error)
+          return false
+        }
+      }
+      return true
+    },
     async session({ session, token }) {
       if (session.user) {
-        session.user.id = token.sub!
+        // Use token.sub or token.id for user ID
+        session.user.id = token.id || token.sub!
       }
       return session
     },
-    async jwt({ token, user }) {
+    async jwt({ token, user, account }) {
       if (user) {
-        token.id = user.id
+        // Set user ID in token for session
+        token.id = (user.id || user.email || account?.providerAccountId) as string
       }
       return token
     },

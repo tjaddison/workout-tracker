@@ -2,50 +2,84 @@
 
 import { motion } from 'framer-motion'
 import { TrendingUp, Target, Clock, Flame } from 'lucide-react'
+import { useUserProfile, useWorkouts, useGymSessions } from '@/app/lib/hooks'
 
 export function StatsOverview() {
-  // Mock data - would be fetched from API in real app
-  const stats = [
-    {
-      icon: Flame,
-      label: 'Week Streak',
-      value: '7',
-      change: '+2',
-      color: 'text-orange-400',
-      bgColor: 'bg-orange-500/20'
-    },
-    {
-      icon: Target,
-      label: 'Workouts',
-      value: '12',
-      change: '+3',
-      color: 'text-primary-400',
-      bgColor: 'bg-primary-500/20'
-    },
-    {
-      icon: Clock,
-      label: 'Hours',
-      value: '8.5',
-      change: '+2.1',
-      color: 'text-secondary-400',
-      bgColor: 'bg-secondary-500/20'
-    },
-    {
-      icon: TrendingUp,
-      label: 'Progress',
-      value: '85%',
-      change: '+12%',
-      color: 'text-emerald-400',
-      bgColor: 'bg-emerald-500/20'
+  const { profile } = useUserProfile()
+  const { workouts } = useWorkouts()
+  const { sessions } = useGymSessions()
+
+  const getStats = () => {
+    if (!profile) return []
+
+    const completedWorkouts = workouts.filter(w => w.completed).length
+    const totalMinutes = sessions.reduce((sum, s) => sum + (s.duration || 0), 0)
+    const totalHours = Math.round(totalMinutes / 60 * 10) / 10
+    const weightLost = profile.settings.startWeight - profile.settings.currentWeight
+    const targetWeightLoss = profile.settings.startWeight - profile.settings.targetWeight
+    const progressPercentage = Math.round((weightLost / targetWeightLoss) * 100)
+
+    // Calculate streak (simplified - consecutive days with workouts)
+    const sortedWorkouts = workouts
+      .filter(w => w.completed)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    
+    let streak = 0
+    const today = new Date()
+    for (const workout of sortedWorkouts) {
+      const workoutDate = new Date(workout.date)
+      const daysDiff = Math.floor((today.getTime() - workoutDate.getTime()) / (1000 * 60 * 60 * 24))
+      if (daysDiff === streak) {
+        streak++
+      } else {
+        break
+      }
     }
-  ]
+
+    return [
+      {
+        icon: Flame,
+        label: 'Day Streak',
+        value: streak.toString(),
+        change: streak > 0 ? `+${streak}` : '0',
+        color: 'text-orange-400',
+        bgColor: 'bg-orange-500/20'
+      },
+      {
+        icon: Target,
+        label: 'Workouts',
+        value: completedWorkouts.toString(),
+        change: `+${completedWorkouts}`,
+        color: 'text-blue-400',
+        bgColor: 'bg-blue-500/20'
+      },
+      {
+        icon: Clock,
+        label: 'Hours',
+        value: totalHours.toString(),
+        change: `+${totalHours}`,
+        color: 'text-green-400',
+        bgColor: 'bg-green-500/20'
+      },
+      {
+        icon: TrendingUp,
+        label: 'Progress',
+        value: `${Math.max(0, progressPercentage)}%`,
+        change: `+${Math.max(0, progressPercentage)}%`,
+        color: 'text-emerald-400',
+        bgColor: 'bg-emerald-500/20'
+      }
+    ]
+  }
+
+  const stats = getStats()
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.1 }}
-      className="grid grid-cols-2 gap-4"
+      className="grid grid-cols-1 sm:grid-cols-2 gap-4"
     >
       {stats.map((stat, index) => (
         <motion.div
@@ -65,8 +99,8 @@ export function StatsOverview() {
           </div>
           
           <div>
-            <p className="text-2xl font-bold text-white mb-1">{stat.value}</p>
-            <p className="text-xs text-dark-400">{stat.label}</p>
+            <p className="text-xl sm:text-2xl font-bold text-white mb-1">{stat.value}</p>
+            <p className="text-sm sm:text-xs text-dark-400">{stat.label}</p>
           </div>
         </motion.div>
       ))}

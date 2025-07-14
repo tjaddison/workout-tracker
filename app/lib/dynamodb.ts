@@ -36,13 +36,21 @@ export async function createUser(user: any) {
 }
 
 export async function getUser(userId: string) {
-  const command = new GetCommand({
-    TableName: TABLES.USERS,
-    Key: { userId },
-  })
-  
-  const result = await dynamodb.send(command)
-  return result.Item
+  try {
+    const command = new GetCommand({
+      TableName: TABLES.USERS,
+      Key: { userId },
+    })
+    
+    const result = await dynamodb.send(command)
+    return result.Item
+  } catch (error: any) {
+    if (error.name === 'ResourceNotFoundException') {
+      console.warn(`Table ${TABLES.USERS} not found. Please run 'npm run create-tables' to create DynamoDB tables.`)
+      return null
+    }
+    throw error
+  }
 }
 
 // Workout operations
@@ -64,18 +72,26 @@ export async function createWorkout(userId: string, workout: any) {
 }
 
 export async function getUserWorkouts(userId: string) {
-  const command = new QueryCommand({
-    TableName: TABLES.WORKOUTS,
-    IndexName: 'UserIdIndex',
-    KeyConditionExpression: 'userId = :userId',
-    ExpressionAttributeValues: {
-      ':userId': userId,
-    },
-    ScanIndexForward: false, // Most recent first
-  })
-  
-  const result = await dynamodb.send(command)
-  return result.Items || []
+  try {
+    const command = new QueryCommand({
+      TableName: TABLES.WORKOUTS,
+      IndexName: 'UserIdIndex',
+      KeyConditionExpression: 'userId = :userId',
+      ExpressionAttributeValues: {
+        ':userId': userId,
+      },
+      ScanIndexForward: false, // Most recent first
+    })
+    
+    const result = await dynamodb.send(command)
+    return result.Items || []
+  } catch (error: any) {
+    if (error.name === 'ResourceNotFoundException') {
+      console.warn(`Table ${TABLES.WORKOUTS} not found. Please run 'npm run create-tables' to create DynamoDB tables.`)
+      return []
+    }
+    throw error
+  }
 }
 
 export async function updateWorkout(workoutId: string, updates: any) {
@@ -143,30 +159,46 @@ export async function updateGymSession(sessionId: string, updates: any) {
 }
 
 export async function getUserSessions(userId: string, limit = 30) {
-  const command = new QueryCommand({
-    TableName: TABLES.SESSIONS,
-    IndexName: 'UserIdIndex',
-    KeyConditionExpression: 'userId = :userId',
-    ExpressionAttributeValues: {
-      ':userId': userId,
-    },
-    ScanIndexForward: false,
-    Limit: limit,
-  })
-  
-  const result = await dynamodb.send(command)
-  return result.Items || []
+  try {
+    const command = new QueryCommand({
+      TableName: TABLES.SESSIONS,
+      IndexName: 'UserIdIndex',
+      KeyConditionExpression: 'userId = :userId',
+      ExpressionAttributeValues: {
+        ':userId': userId,
+      },
+      ScanIndexForward: false,
+      Limit: limit,
+    })
+    
+    const result = await dynamodb.send(command)
+    return result.Items || []
+  } catch (error: any) {
+    if (error.name === 'ResourceNotFoundException') {
+      console.warn(`Table ${TABLES.SESSIONS} not found. Please run 'npm run create-tables' to create DynamoDB tables.`)
+      return []
+    }
+    throw error
+  }
 }
 
 // Settings operations
 export async function getUserSettings(userId: string) {
-  const command = new GetCommand({
-    TableName: TABLES.SETTINGS,
-    Key: { userId },
-  })
-  
-  const result = await dynamodb.send(command)
-  return result.Item
+  try {
+    const command = new GetCommand({
+      TableName: TABLES.SETTINGS,
+      Key: { userId },
+    })
+    
+    const result = await dynamodb.send(command)
+    return result.Item
+  } catch (error: any) {
+    if (error.name === 'ResourceNotFoundException') {
+      console.warn(`Table ${TABLES.SETTINGS} not found. Please run 'npm run create-tables' to create DynamoDB tables.`)
+      return null
+    }
+    throw error
+  }
 }
 
 export async function updateUserSettings(userId: string, settings: any) {

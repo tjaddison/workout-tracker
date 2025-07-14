@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
+import { createUser, getUser } from '@/app/lib/dynamodb'
 
 const handler = NextAuth({
   providers: [
@@ -9,6 +10,29 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
+    async signIn({ user, account, profile }) {
+      if (account?.provider === 'google') {
+        try {
+          // Check if user exists in database
+          const existingUser = await getUser(user.id)
+          
+          if (!existingUser) {
+            // Create new user in database
+            await createUser({
+              id: user.id,
+              email: user.email,
+              name: user.name,
+              image: user.image,
+            })
+          }
+          return true
+        } catch (error) {
+          console.error('Error during sign in:', error)
+          return false
+        }
+      }
+      return true
+    },
     async session({ session, token }) {
       if (session.user) {
         session.user.id = token.sub!
