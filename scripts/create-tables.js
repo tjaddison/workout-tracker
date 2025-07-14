@@ -128,11 +128,7 @@ async function createTables() {
       }
     }
     
-
-
-
-    // List all tables after creation
-    console.log('\n🎉 All tables are ready!')
+    console.log('\n🎉 All tables are ready!!')
     
   } catch (error) {
     console.error('❌ Failed to create tables:', error.message)
