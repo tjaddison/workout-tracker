@@ -128,6 +128,10 @@ async function createTables() {
       }
     }
     
+
+
+
+    // List all tables after creation
     console.log('\n🎉 All tables are ready!')
     
   } catch (error) {
